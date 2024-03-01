@@ -1,0 +1,22 @@
+from math import inf
+class Solution:
+    # inf has been imported in driver code
+    def immediateGreater(self,arr,n,x):
+        dist=float('inf')
+        ai=float('inf')
+        for i in arr:
+            current_dist=abs(x-1)
+            if i>x:
+                dist=min(current_dist,dist)
+                ai=min(ai,i)
+        if ai==float('inf'):
+            return -1        
+        return ai
+    
+n=int(input())
+arr=[int(e) for e in input().split()]
+x=int(input())
+
+ans=Solution().immediateGreater(arr,n,x)
+print(ans)
+
